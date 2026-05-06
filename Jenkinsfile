@@ -40,16 +40,7 @@ pipeline {
             steps {
                 bat 'npm audit || exit /b 0'
             }
-            post {
-                always {
-                    emailext(
-                        subject: "Security Scan ${currentBuild.currentResult}: ${env.JOB_NAME}",
-                        body: "The security scan stage has completed. Build status: ${currentBuild.currentResult}. Console log is attached.",
-                        to: "riyabiju04@gmail.com",
-                        attachLog: true
-                    )
-                }
-            }
+            
         }
     }
 }
