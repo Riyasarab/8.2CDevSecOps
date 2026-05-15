@@ -20,7 +20,7 @@ pipeline {
             }
         }
 
-        stage('Generate Coverage Report') {
+        stage('Generate Coverage Report UPDATE') {
             steps {
                 bat 'npm run coverage || exit /b 0'
             }
